@@ -9,14 +9,12 @@ public class CreateHypernymDatabase {
         RegexParser regexParser = new RegexParser();
         try {
             for (File file : courpusDir) {
-                is = new BufferedReader( // wrapper that reads ahead
-                        new InputStreamReader( // wrapper that reads characters
+                // wrapper that reads ahead
+                is = new BufferedReader(
+                        // wrapper that reads characters
+                        new InputStreamReader(
                                 new FileInputStream(file)));
                 regexParser.parseString(is, outputPath);
-//                String line;
-//                while ((line = is.readLine()) != null) { // 'null '->no more data in the stream
-//                    System.out.print(line);
-//                }
             }
         } catch (IOException e1) {
             System.out.println(" Something went wrong while reading !");
